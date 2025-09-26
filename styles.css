@@ -1,0 +1,116 @@
+*{
+    transition: 0.3s ease;
+}
+
+body {
+    background-color: black;
+    /* padding: 0;
+    margin: 0; */
+    color: aliceblue;
+}
+
+header{
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: normal;
+    /* font-variation-settings:
+    "ROND" 0; */
+
+}
+
+nav{
+    height: 70px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+#filler{
+    flex: 1;
+}
+
+#logo{
+    background-color: red;
+    height: 50px;
+    width: 50px
+}
+
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    /* background-color: rebeccapurple; */
+}
+
+.opt:hover{
+    cursor: pointer;
+    opacity: 75%;
+}
+
+
+
+h3{
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 21px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+#hori{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    
+}
+
+a { all: unset; }
+
+
+.lvl{
+    /* background-color: red; */
+    width: 20%;
+    border: 2px solid white;
+}
+
+.lvl:hover{
+    width: 70%;
+    background-color: grey;
+}
+
+
+
+
+
+
+/*==== LEDGER ====*/
+
+.card{
+    background-color: rgb(52, 52, 52);
+    height: 200px;
+    width: 50vw;
+    margin: 15px auto;
+    border: 3px solid grey;
+    border-radius: 10px;
+
+}
+
+/* 
+#card-n{
+    border-color: blue;
+}    */
+
+#card-g{
+    border-color: green;
+}
+
+#card-r{
+    border-color: red;
+}
