@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* cdn of the other font too its currently in html only */
+
 *{
     transition: 0.3s ease;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
+
+
 
 body {
     background-color: black;
@@ -77,7 +85,11 @@ a { all: unset; }
 .lvl{
     /* background-color: red; */
     width: 20%;
-    border: 2px solid white;
+    border: 2px solid grey; 
+}
+
+.lvl + .lvl{
+    border-left: 0;
 }
 
 .lvl:hover{
@@ -113,4 +125,103 @@ a { all: unset; }
 
 #card-r{
     border-color: red;
+}
+
+
+/* ===leaderboard=== */
+
+table{
+    text-transform: lowercase;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px 20px;
+    
+}
+
+th{
+    background-color: darkcyan;
+}
+
+#you-tb{
+    background-color: grey;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+    /* margin: 10px 50px; */
+}
+
+td{
+    text-align: center;
+}
+
+tr:hover {background-color: coral;}
+
+
+/* === PODIUM ==== */
+
+#podium{
+    /* background-color: aqua; */
+    height: 30vw;
+    width: 60vw;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: inherit;
+    align-items:flex-end;
+    text-align: center;
+}
+
+/* .half{
+
+}
+
+.onefourth{
+
+} */
+
+
+#fir{
+    /* background-color: red; */
+    flex: 1;
+    height: 15vw;
+    text-align: center;
+    border: 2px solid grey;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+#sec{
+    /* background-color: blueviolet; */
+    flex: 1;
+    height: 23vw;
+    text-align: center;
+    border: 2px solid grey;
+    border-bottom: 0px;
+}
+
+#thir{
+    /* background-color: bisque; */
+    flex: 1;
+    height: 10vw;
+    text-align: center;
+    justify-content: center;   
+    border: 2px solid grey;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.pos-name{
+    justify-self: auto;
+    text-align: center;
+}
+.team-name{
+    position:relative;
+    top: -50px;
+    /* left: 30px; */
+    align-items: center;
+    text-align: center;
 }
