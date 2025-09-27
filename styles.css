@@ -68,10 +68,24 @@ h3{
     font-size: 21px;
     font-weight: 700;
     font-style: normal;
+    text-align: center;
 }
 
-
+#container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    margin: 20px 30px;
+}
 #hori{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    
+}
+
+#hori2{
     /* background-color: rebeccapurple; */
     display: flex;
     flex-direction: row;
@@ -118,6 +132,16 @@ a { all: unset; }
 #card-n{
     border-color: blue;
 }    */
+
+/* decide if i wanna use red green and variable vcolors
+    or keep a sleek aesthetic only */
+
+/* will finilazie when i properluy design the cards, logo finish up with colors
+    and other implementations properl;uy done in code*/
+
+/*  CARD DESIGN LEFT completing after midsem fosho*/
+
+
 
 #card-g{
     border-color: green;
