@@ -1,1 +1,1 @@
-ctf ctf ctf
+entropyctf :o
