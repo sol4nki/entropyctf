@@ -116,7 +116,7 @@ a { all: unset; }
 
 
 
-/*==== LEDGER ====*/
+/*==== logs ====*/
 
 .card{
     background-color: rgb(52, 52, 52);
@@ -125,6 +125,7 @@ a { all: unset; }
     margin: 15px auto;
     border: 3px solid grey;
     border-radius: 10px;
+    padding: 4px 10px;
 
 }
 
@@ -248,4 +249,46 @@ tr:hover {background-color: coral;}
     /* left: 30px; */
     align-items: center;
     text-align: center;
+}
+
+
+
+
+
+/* ===LOGIN PART ==== */
+
+.main-container{
+    /* background-color: aqua; */
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.part1{
+    /* background-color: red; */
+    /* height: 100%; */
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.part2{
+    /* background-color: rebeccapurple; */
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+input{
+    background-color: black;
+    color: green;
+    border: 1px solid grey;
+    padding: 4px 9px;
+    margin: 4px 8px;
+}
+
+input:active{
+    border: 1px solid white;
 }
