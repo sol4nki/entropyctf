@@ -28,6 +28,73 @@ header{
 
 }
 
+
+
+/* === loading === */
+
+#specialcase{
+    display: inline;
+    padding: 0px 0px;
+}
+#blinker {
+    display: inline-flex;
+    background-color: white;
+    align-items: center;
+    align-self: center;
+    height: 17px;
+    width: 7px;
+    margin: -2/px -5px;
+    padding: 0px 0px;
+    animation: blink-animation 1s steps(1, start) infinite;
+    -webkit-animation: blink-animation 1s steps(1, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+#loading-front{
+    background-color: white;
+    height: 4px;
+    border-radius: 50px;
+    width: 0%;
+    animation: loading-anim 4s infinite;
+    -webkit-animation: loading-anim 3s infinite;
+
+}
+
+
+@keyframes loading-anim {
+  0% { width: 0%; }
+  40% { width: 30%; }
+  70% { width: 100%; }
+  90% {width: 0%;}
+}
+
+@-webkit-keyframes loading-anim {
+  0% { width: 0%; }
+  50% { width: 30%; }
+  100% { width: 100%; }
+}
+
+
+#loading-back{
+    margin: 20px 20px;
+    background-color: grey;
+    height: 4px;
+    border-radius: 50px;
+    
+}
+
 nav{
     height: 70px;
     /* background-color: aqua; */
