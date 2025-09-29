@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
     <!-- fonts here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,51 +66,51 @@
     <table>
         <tr>
             <th>Rank</th>
+            <th>Name</th>
             <th>Team</th>
             <th>Points</th>
-            <th>Solved</th>
 
         </tr>
         <tr id="you-tb">
             <td>Unranked</td>
+            <td>YOU</td>
             <td>Coreisus</td>
             <td>0.0 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         <tr>
             <td>[1]</td>
+            <td>Cloud9</td>
             <td>Lorem</td>
             <td>2.7 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         <tr>
             <td>[2]</td>
+            <td>zypher</td>
             <td>Ipsum</td>
             <td>1.4 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         <tr>
             <td>[3]</td>
+            <td>Telltale</td>
             <td>Custard</td>
             <td>1.3 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         <tr>
             <td>[4]</td>
+            <td>Hellowrld</td>
             <td>Chilled</td>
             <td>0.9 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         <tr>
             <td>[5]</td>
+            <td>pikachu</td>
             <td>Drowning</td>
             <td>0.2 flag icon</td>
-            <td>0/10</td>
             
         </tr>
         

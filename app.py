@@ -1,11 +1,14 @@
-from flask import Flask
+# from flask import Flask
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return "testing"
+# @app.route('/')
+# def index():
+#     return "testing"
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+def announcement(title = 'notice', header = 'time left', lines=2):
+    return -1

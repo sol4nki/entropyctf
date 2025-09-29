@@ -33,4 +33,4 @@ server.listen(port, hostname, () => {
 // flag input
 // everytime flag input check for that specific level's flag from db and give appropriate response and update points (0+ if wrong and x+ if correct)
 
-// 
+// first second third also update everytime points updated/stolen/gained wtv

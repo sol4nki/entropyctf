@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles.css">
+    <!-- fonts here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
@@ -13,27 +14,20 @@
 <body>
     <header>Logs</header>
     <a href="../main.html">transport</a>
-
-    <div class="card">
-        <p><strong>notice:</strong> competition about to end</p>
-        <p>questions available for solving: 4/10</p>
-        <p>time left: 15mins </p>
-    </div>
-
     <div class="card" id="card-n">
-        <p><strong>hint — lvl 5</strong></p>
-        <p>admin announcement -</p>
+        <p><strong>hint</strong> for lvl5</p>
+        <p>admin announcement</p>
         <p>try searching for image metadata somewhere might help converting it to some other base</p>
     </div>
     <div class="card" id="card-g">
-        <p><strong>lvl 3 — solved</strong></p>
-        <p>by: <strong>team-ta</strong></p>
+        <p><strong>lvl3</strong> solved successfully</p>
+        <p>by: team-ta</p>
         <p>now this level will no longer validate any flag inputs, better try other levels</p>
     </div>
     <div class="card" id="card-r">
-        <p><strong>0.93 (flag icon) points stolen</strong> </p>
-        <p>by: <span style="color:#cfcfe6;">caz-team</span> &nbsp; · &nbsp; from: <span style="color:#cfcfe6;">team-xyz</span></p>
-
+        <p><strong>0.93 (flag icon)</strong> points stolen</p>
+        <p>by: caz-team</p>
+        <p>from: team-xyz</p>
         <p>$team-xyz's encrypted key will no longer be in play for the rest of the competition</p>
     </div>
 

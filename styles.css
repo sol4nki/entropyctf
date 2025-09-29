@@ -11,10 +11,10 @@
 
 
 body {
-    background-color: black;
+    background-color: #0d1117;
     /* padding: 0;
     margin: 0; */
-    color: aliceblue;
+    color: #e6edf3;
 }
 
 header{
@@ -38,12 +38,12 @@ header{
 }
 #blinker {
     display: inline-flex;
-    background-color: white;
+    background-color: #f8f9fa;
     align-items: center;
     align-self: center;
     height: 17px;
     width: 7px;
-    margin: -2/px -5px;
+    margin: -2px -5px;
     padding: 0px 0px;
     animation: blink-animation 1s steps(1, start) infinite;
     -webkit-animation: blink-animation 1s steps(1, start) infinite;
@@ -63,7 +63,7 @@ header{
 
 
 #loading-front{
-    background-color: white;
+    background-color: #58a6ff;
     height: 4px;
     border-radius: 50px;
     width: 0%;
@@ -89,7 +89,7 @@ header{
 
 #loading-back{
     margin: 20px 20px;
-    background-color: grey;
+    background-color: #30363d;
     height: 4px;
     border-radius: 50px;
     
@@ -109,7 +109,7 @@ nav{
 }
 
 #logo{
-    background-color: red;
+    background-color: #8957e5;
     height: 50px;
     width: 50px
 }
@@ -166,7 +166,7 @@ a { all: unset; }
 .lvl{
     /* background-color: red; */
     width: 20%;
-    border: 2px solid grey; 
+    border: 2px solid #30363d; 
 }
 
 .lvl + .lvl{
@@ -175,7 +175,7 @@ a { all: unset; }
 
 .lvl:hover{
     width: 70%;
-    background-color: grey;
+    background-color: #21262d;
 }
 
 
@@ -186,11 +186,11 @@ a { all: unset; }
 /*==== logs ====*/
 
 .card{
-    background-color: rgb(52, 52, 52);
+    background-color: #161b22;
     height: 200px;
     width: 50vw;
     margin: 15px auto;
-    border: 3px solid grey;
+    border: 3px solid #30363d;
     border-radius: 10px;
     padding: 4px 10px;
 
@@ -212,11 +212,11 @@ a { all: unset; }
 
 
 #card-g{
-    border-color: green;
+    border-color: #2ea043;
 }
 
 #card-r{
-    border-color: red;
+    border-color: #f85149;
 }
 
 
@@ -227,18 +227,18 @@ table{
 }
 
 table, th, td {
-    border: 1px solid grey;
+    border: 1px solid #30363d;
     border-collapse: collapse;
     padding: 5px 20px;
     
 }
 
 th{
-    background-color: darkcyan;
+    background-color: #238636;
 }
 
 #you-tb{
-    background-color: grey;
+    background-color: #21262d;
 }
 
 table{
@@ -251,7 +251,7 @@ td{
     text-align: center;
 }
 
-tr:hover {background-color: coral;}
+tr:hover {background-color: #ff7b72;}
 
 
 /* === PODIUM ==== */
@@ -282,7 +282,7 @@ tr:hover {background-color: coral;}
     flex: 1;
     height: 15vw;
     text-align: center;
-    border: 2px solid grey;
+    border: 2px solid #c0c0c0;
     border-bottom: 0px;
     border-right: 0px;
 }
@@ -292,7 +292,7 @@ tr:hover {background-color: coral;}
     flex: 1;
     height: 23vw;
     text-align: center;
-    border: 2px solid grey;
+    border: 2px solid #ffd700;
     border-bottom: 0px;
 }
 
@@ -302,7 +302,7 @@ tr:hover {background-color: coral;}
     height: 10vw;
     text-align: center;
     justify-content: center;   
-    border: 2px solid grey;
+    border: 2px solid #cd7f32;
     border-bottom: 0px;
     border-left: 0px;
 }
@@ -349,13 +349,25 @@ tr:hover {background-color: coral;}
 }
 
 input{
-    background-color: black;
-    color: green;
-    border: 1px solid grey;
+    background-color: #0d1117;
+    color: #2ea043;
+    border: 1px solid #30363d;
     padding: 4px 9px;
     margin: 4px 8px;
 }
 
 input:active{
-    border: 1px solid white;
+    border: 1px solid #58a6ff;
 }
+
+/* 
+primary:   #6366f1
+secondary: #14b8a6
+accent:    #f59e0b
+background: #f8fafc
+surface:    #ffffff
+text primary:   #1e293b
+text secondary: #64748b
+error:   #ef4444
+success: #22c55e
+*/

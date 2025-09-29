@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* cdn of the other font too its currently in html only */
+
+*{
+    transition: 0.3s ease;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-transform: lowercase;
+}
+
+
+
+body {
+    background-color: #0a0a0a;
+    /* padding: 0;
+    margin: 0; */
+    color: #e6e6e6;
+}
+/* #container{
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: purple;
+} */
+
+
+/* #entropyctf{
+    display: inline;
+} */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 0px 0px;
+    opacity: 1;
+    text-transform: lowercase;
+}
+
+h4{
+    font-weight: 300;
+    padding: 0px 9px;
+    
+}
+
+p{
+    color: #333;
+}
+
+
+
+/* === HOMEPAGE === */
+
+
+#homename{
+    /* background-color: aqua; */
+    margin: 0 auto;
+    margin-top: 20vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0px 0px;
+    
+    
+}
+
+#blinking-cursor{
+    background-color: #e6e6e6;
+    margin: 9px 2px;  
+    height: 3px; /* fix according to font and font-size now */
+    width: 14px;
+    /* margin: -1px -4px; */
+    animation: blink-animation 1s steps(1, start) infinite;
+    -webkit-animation: blink-animation 1s steps(1, start) infinite;
+    
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+a { all: unset; }
+/* input {all: unset; } */
+
+#paras{
+    text-align: center;
+    margin: 24px 0px;
+}
+
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.opt{
+    
+    transition: none;
+}
+
+.opt:hover{
+    transition: none;
+    border-bottom: 1px solid #666;
+    color: #666;
+    cursor: pointer;
+}
+
+
+
+
+/* ===leaderboard=== */
+
+table{
+    text-transform: lowercase;
+}
+
+table, th, td {
+    border: 1px solid #30363d;
+    border-collapse: collapse;
+    padding: 5px 20px;
+    
+}
+
+th{
+    background-color: #000000;
+}
+
+#you-tb{
+    background-color: #202020;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+    /* margin: 10px 50px; */
+}
+
+td{
+    text-align: center;
+}
+
+tr:hover {background-color: #222;}
+
+
+/* === PODIUM ==== */
+
+#podium{
+    /* background-colo@r: aqua; */
+    height: 220px;
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: inherit;
+    align-items:flex-end;
+    text-align: center;
+}
+
+/* .half{
+
+}
+
+.onefourth{
+
+} */
+
+
+#fir{
+    /* background-color: red; */
+    flex: 1;
+    height: 110px;
+    text-align: center;
+    border: 2px solid #c0c0c0;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+#sec{
+    /* background-color: blueviolet; */
+    flex: 1;
+    height: 165px;
+    text-align: center;
+    border: 2px solid #ffd700;
+    border-bottom: 0px;
+}
+
+#thir{
+    /* background-color: bisque; */
+    flex: 1;
+    height: 75px;
+    text-align: center;
+    justify-content: center;   
+    border: 2px solid #cd7f32;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.pos-name{
+    justify-self: auto;
+    text-align: center;
+}
+.team-name{
+    position:relative;
+    top: -50px;
+    /* left: 30px; */
+    align-items: center;
+    text-align: center;
+}
+
+
+
+/* === levels/lvls === */
+
+#container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 30px;
+}
+#hori{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+}
+
+#hori2{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+}
+
+.lvl{
+    /* background-color: red; */
+    width: 20%;
+    border: 2px solid #30363d;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: #121212;
+    color: #e6e6e6;
+}
+
+.lvl + .lvl{
+    border-left: 0;
+}
+
+.lvl:hover{
+    width: 70%;
+    background-color: #1c1c1c;
+}
+
+
+/* === login key stealer === */
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* background-color:rebeccapurple; */
+    padding: 40px 20px;
+    gap: 50px;
+}
+
+.part1, .part2 {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
+
+.part1:hover, .part2:hover {
+    border-color: #444;
+    background: #111;
+}
+
+input{
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    /* above are the fixes for issues which i encountered on 
+    firefox + chromium based browsers fixed ig but still ill 
+    check stackoverflow once*/
+    width: 80%;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    color: #fff;
+    padding: 12px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    
+}
+
+input:focus{
+    outline: none;
+    border-color: #444;
+    background: #111;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+/* === rules === */
+
+/* .rules-container{
+    background-color: #888;
+    height: 80vh;
+} */
+
+
+/* === LOGSSSSSSSSSS === FINAL THING TO DESIGN FINALLY NEED TO WORK ON DB NOW <3 ==== */
+
+.card{
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #121212;
+    border: 1px solid #30363d;
+    color: #e6e6e6;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 1 1 8px rgba(255, 255, 255, 1);
+}
+
+.card p{
+    margin: 5px 0px;
+}
+
+.card strong{
+    color: #aaa;
+}
