@@ -1,64 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
-    <!-- fonts here -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
-
-    <title>EntropyCTF</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" hiddencontent="width=device-width,initial-scale=1" />
+  <title>EntropyCTF — Levels</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@200..900&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-    <header>Levels</header>
-    <a href="../main.html">transport</a>
-    
-    <div id="container">
+  <header>
+    EntropyCTF Levels
+    <a class="back" href="../main.html">← transport</a>
+  </header>
 
-        <h3>Introductory</h3>
-        <div id="hori">
-            <div class="lvl" id="1">
-                lvl1
-            </div>
-            <div class="lvl" id="2">
-                lvl2
-            </div>
-            <div class="lvl" id="3">
-                lvl3
-            </div>
-            <div class="lvl" id="4">
-                lvl4
-            </div>
-            <div class="lvl" id="5">
-                lvl5
-            </div>
-        </div>
-        
-        <h3>Advanced</h3>
-        <div id="hori2">
-            
-            <div class="lvl" id="6">
-                lvl6
-            </div>
-            <div class="lvl" id="7">
-                lvl7
-            </div>
-            <div class="lvl" id="8">
-                lvl8
-            </div>
-            <div class="lvl" id="9">
-                lvl9
-            </div>
-            <div class="lvl" id="10">
-                lvl10
-            </div>
-        </div>
-        
+  <div id="container">
+    <h3>Beginner</h3>
+    <div class="row" id="row-beginner"> <!-- row is also vertical column so yeah (for design purposes)-->
+      <div class="lvl" id="lvl1" data-flag="ENTROPY{lvl1_demo}">
+        <div class="title">lvl1</div>
+        <div class="meta">ssh &amp; lvl descp</div>
+        <div class="badge locked">locked</div>
 
+        <div class="hiddencontent" >
+          <p class="small">Beginner — lorem ipsum ipsum hello world hello i am here</p>
+
+          <div class="links">
+            <a class="note" href="#">ssh: <code>ssh user@10.10.10.1 -p 2222</code></a>
+            <a class="download" href="files/lvl1.txt" download>download guide</a>
+          </div>
+
+          <p class="hint">Hint: check xyz xyz xyz lorem ipsum.</p>
+
+          <div class="flag-row">
+            <input type="text" placeholder="enter flag (e.g. ENTROPY{...})" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl2" data-flag="ENTROPY{lvl2_demo}">
+        <div class="title">lvl2</div>
+        <div class="meta">rrr lvl descp</div>
+        <div class="badge locked">locked</div> <!-- upadte everytime using serrver fetch lvl details if unlocked or not -->
+
+        <div class="hiddencontent">
+          <p class="small">Fix — lorem ipsum ipsum hello world hello i am here.</p>
+          <div class="links">
+            <a class="download" href="files/lvl2-src.zip" download>Rust source</a>
+            <a href="https://wikipedia.com/lvl2-hint" target="_blank">online hint</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl2" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl3" data-flag="ENTROPY{lvl3_demo}">
+        <div class="title">lvl3</div>
+        <div class="meta">hex lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">Find hex — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a class="download" href="files/lvl3.bin" download>Download binary</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl4" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl4" data-flag="ENTROPY{lvl4_demo}">
+        <div class="title">lvl4</div>
+        <div class="meta">image lvl descp</div>
+        <div class="badge">unlocked</div>
+
+        <div class="hiddencontent">
+          <p class="small">inspect — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a class="download" href="files/lvl4-image.jpg" download>Download image</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl4" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl5" data-flag="ENTROPY{lvl5_demo}">
+        <div class="title">lvl5</div>
+        <div class="meta">files lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">combine — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a class="download" href="files/lvl5.txt" download>part1.pdf</a>
+          </div>
+
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl5" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <h3>Advanced</h3>
+    <div class="row" id="row-advanced">
+      <div class="lvl" id="lvl6" data-flag="ENTROPY{lvl6_demo}">
+        <div class="title">lvl6</div>
+        <div class="meta">hidden lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">look @ js — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a href="https://example.com/lvl6" target="_blank">challenge site</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl6" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl7" data-flag="ENTROPY{lvl7_demo}">
+        <div class="title">lvl7</div>
+        <div class="meta">node lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">interact w node server — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a href="https://example.com/lvl7" target="_blank">server endpoint</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl7" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl8" data-flag="ENTROPY{lvl8_demo}">
+        <div class="title">lvl8</div>
+        <div class="meta">github lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">Search — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a href="https://github.com/example/repo" target="_blank">repo link</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl8" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl9" data-flag="ENTROPY{lvl9_demo}">
+        <div class="title">lvl9</div>
+        <div class="meta">bl lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">bl — lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a class="download" href="files/lvl9.xyz" download>download .xyz</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl9" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lvl" id="lvl10" data-flag="ENTROPY{lvl10_demo}">
+        <div class="title">lvl10</div>
+        <div class="meta">owasp assist lvl descp</div>
+        <div class="badge locked">locked</div>
+
+        <div class="hiddencontent">
+          <p class="small">Final challenge — talk to a girl lorem ipsum ipsum hello world hello i am here</p>
+          <div class="links">
+            <a href="#" target="_blank">discuss</a>
+          </div>
+          <div class="flag-row">
+            <input type="text" placeholder="flag for lvl10" class="flag-input" />
+            <button class="check-btn">check</button>
+            <div class="filler-lvl-btn"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="../script.js"></script>
 </body>
 </html>

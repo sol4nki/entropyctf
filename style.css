@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-/* cdn of the other font too its currently in html only */
 
 *{
     transition: 0.3s ease;
-    font-family: "JetBrains Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
+    /* font-family: "JetBrains Mono", monospace; */
     text-transform: lowercase;
 }
 
-
-
 body {
+    margin: 0;
     background-color: #0a0a0a;
-    /* padding: 0;
-    margin: 0; */
     color: #e6e6e6;
+    font-family: 'Doto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
+
 /* #container{
     height: 90vh;
     width: 90vw;
@@ -30,6 +26,7 @@ body {
 /* #entropyctf{
     display: inline;
 } */
+
 h1 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -45,12 +42,28 @@ h4{
 }
 
 p{
-    color: #333;
+    color: #666;
+}
+
+header {
+    padding: 18px 28px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #58a6ff;
+}
+
+header a.back {
+    margin-left: 28px;
+    color: #9aa4ad;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 
 
 /* === HOMEPAGE === */
+
 
 
 #homename{
@@ -61,16 +74,18 @@ p{
     align-items: flex-end;
     justify-content: center;
     padding: 0px 0px;
+    color: #58a6ff;
     
     
 }
 
 #blinking-cursor{
-    background-color: #e6e6e6;
-    margin: 9px 2px;  
-    height: 3px; /* fix according to font and font-size now */
-    width: 14px;
-    /* margin: -1px -4px; */
+    /* background-color: #e6e6e6; */
+    /* margin: 9px 2px;   */
+    /* height: 3px; fix according to font and font-size now */
+    /* width: 14px; */
+    /* margin-bottom: 4px; */
+    font-size: 2em; /* just googled size of h1 tag */
     animation: blink-animation 1s steps(1, start) infinite;
     -webkit-animation: blink-animation 1s steps(1, start) infinite;
     
@@ -92,11 +107,11 @@ p{
 a { all: unset; }
 /* input {all: unset; } */
 
+
 #paras{
     text-align: center;
     margin: 24px 0px;
 }
-
 
 nav{
     display: flex;
@@ -114,7 +129,7 @@ nav{
 
 .opt:hover{
     transition: none;
-    border-bottom: 1px solid #666;
+    border-bottom: 2px solid #444;
     color: #666;
     cursor: pointer;
 }
@@ -125,14 +140,17 @@ nav{
 /* ===leaderboard=== */
 
 table{
-    text-transform: lowercase;
+    width: 80vw;
+    margin: auto;
+    border-radius: 4px;
+    /* margin: 10px 50px; */
 }
 
 table, th, td {
     border: 1px solid #30363d;
     border-collapse: collapse;
+    border-radius: 4px;
     padding: 5px 20px;
-    
 }
 
 th{
@@ -143,11 +161,6 @@ th{
     background-color: #202020;
 }
 
-table{
-    width: 90%;
-    margin: auto;
-    /* margin: 10px 50px; */
-}
 
 td{
     text-align: center;
@@ -189,6 +202,11 @@ tr:hover {background-color: #222;}
     border-right: 0px;
 }
 
+#fir p{
+    color: #c0c0c0;
+
+}
+
 #sec{
     /* background-color: blueviolet; */
     flex: 1;
@@ -196,6 +214,11 @@ tr:hover {background-color: #222;}
     text-align: center;
     border: 2px solid #ffd700;
     border-bottom: 0px;
+}
+
+#sec p{
+    color: #ffd700;
+
 }
 
 #thir{
@@ -208,6 +231,11 @@ tr:hover {background-color: #222;}
     border-bottom: 0px;
     border-left: 0px;
 }
+
+#thir p{
+    color: #cd7f32;
+}
+
 .pos-name{
     justify-self: auto;
     text-align: center;
@@ -224,72 +252,244 @@ tr:hover {background-color: #222;}
 
 /* === levels/lvls === */
 
-#container{
+
+#container {
     display: flex;
     flex-direction: column;
-    margin: 20px 30px;
-}
-#hori{
+    gap: 20px;
+    padding: 10px 30px 40px;
     /* background-color: rebeccapurple; */
-    display: flex;
-    flex-direction: row;
-    height: 50vh;
 }
 
-#hori2{
-    /* background-color: rebeccapurple; */
-    display: flex;
-    flex-direction: row;
-    height: 50vh;
+h3 {
+    /* background-color: blanchedalmond; */
+    margin: 8px 0 4px;
+    color: #9aa4ad;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.lvl{
+.row {
+    /* background-color: rebeccapurple; */
+    display: flex;
+    gap: 0;
+    height: 48vh;
+}
+
+.lvl {
+    background-color: #121212;
     /* background-color: red; */
     width: 20%;
-    border: 2px solid #30363d;
+    border: 1px solid #30363d;
     display: flex;
     flex-direction: column;
-    text-align: center;
     justify-content: center;
-    background-color: #121212;
-    color: #e6e6e6;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: width 0.28s cubic-bezier(0.22, 0.9, 0.35, 1), background 0.2s ease;
+    overflow: hidden;
+    position: relative;
 }
 
-.lvl + .lvl{
-    border-left: 0;
+.lvl .title {
+    font-weight: 700;
 }
 
-.lvl:hover{
+.lvl .meta {
+    color: #9aa4ad;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.lvl.expanded {
     width: 70%;
-    background-color: #1c1c1c;
+    background-color: #121212;
+    cursor: pointer;
+    align-items: flex-start;
+    text-align: left;
 }
+
+.hiddencontent {
+    width: 100%;
+    margin-top: 12px;
+    color: #d7d7d7;
+    opacity: 0;
+    max-height: 0;
+    /* display: none; not using cause then animation nhi hoti */ 
+    transition: max-height 0.4s ease, opacity 0.25s ease 0.05s;
+    overflow: hidden;
+}
+
+.lvl.expanded .hiddencontent {
+    opacity: 1;
+    max-height: 1000px;
+    /* display: block; */
+}
+
+.hiddencontent .small {
+    color: #9aa4ad;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 6px 0 12px;
+}
+
+.links a {
+    color: #58a6ff;
+    /* text-decoration: none; */
+    font-size: 12px;
+    background-color: rgba(88, 166, 255, 0.07);
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(88, 166, 255, 0.07);
+}
+
+.flag-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.flag-row input {
+    font-family: 'Doto';
+    flex: 1;
+    background-color: #0b0b0b;
+    border: 1px solid #2a2a2a;
+    padding: 8px 10px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 13px;
+    transition: box-shadow 0.1s ease;
+}
+
+.flag-row input:focus {
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.06);
+    border-color: #58a6ff;
+}
+
+.flag-row button {
+    font-family: 'Doto';
+    background: #58a6ff;
+    color: #071428;
+    border: none;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.flag-row button:active {
+    transform: translateY(1px);
+}
+
+.filler-lvl-btn {
+    margin-left: 8px;
+    font-size: 13px;
+    min-width: 120px;
+    text-align: left;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(46, 160, 67, 0.12);
+    color: #2ea043;
+    border: 1px solid rgba(46, 160, 67, 0.18);
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.badge.locked {
+    background-color: rgba(255, 92, 92, 0.06);
+    color: #ff5c5c;
+    border-color: rgba(255, 92, 92, 0.12);
+}
+
+/* .note {
+    color: #9aa4ad;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 6px 8px;
+    border-radius: 4px;
+    display: inline-block;
+} */
+
+.hint {
+    color: #cfcfcf;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+    .row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lvl, .lvl.expanded {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .lvl {
+        padding: 12px;
+    }
+}
+
+
+
 
 
 /* === login key stealer === */
 
 .login-container {
+    margin: 50px 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    /* height: 50vh; */
     /* background-color:rebeccapurple; */
     padding: 40px 20px;
     gap: 50px;
+    
+    
+    /* box-sizing: border-box; */
 }
 
 .part1, .part2 {
     background: #0a0a0a;
     border: 1px solid #222;
+    border-radius: 4px;
     padding: 25px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
+    /* max-width: 400px; */
     height: 300px;
+    /* max-height: 300px; */
 }
 
 .part1:hover, .part2:hover {
@@ -298,6 +498,8 @@ tr:hover {background-color: #222;}
 }
 
 input{
+    border-radius: 4px;
+    font-family: 'Doto';
     -webkit-appearance: none;
     appearance: none;
     box-sizing: border-box;
@@ -326,16 +528,16 @@ input::placeholder {
 
 /* === rules === */
 
-/* .rules-container{
-    background-color: #888;
-    height: 80vh;
-} */
+.rules-container{
+    /* background-color: #888; */
+    margin: 10px 40px;
+}
 
 
 /* === LOGSSSSSSSSSS === FINAL THING TO DESIGN FINALLY NEED TO WORK ON DB NOW <3 ==== */
 
 .card{
-    font-family: 'JetBrains Mono', monospace;
+    /* font-family: 'JetBrains Mono', monospace; */
     background-color: #121212;
     border: 1px solid #30363d;
     color: #e6e6e6;
@@ -346,9 +548,10 @@ input::placeholder {
 }
 
 .card p{
+    color: #bbb;
     margin: 5px 0px;
 }
 
 .card strong{
-    color: #aaa;
+    color: #ddd;
 }
