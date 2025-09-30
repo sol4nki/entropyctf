@@ -1,1 +1,1 @@
-entropyctf :o
+entropyctf
