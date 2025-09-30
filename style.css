@@ -46,6 +46,9 @@ p{
 }
 
 header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 18px 28px;
     font-size: 20px;
     font-weight: 700;
@@ -62,7 +65,7 @@ header a.back {
 
 
 
-/* === HOMEPAGE === */
+/* === HOMEPAGE index.html === */
 
 
 
@@ -175,6 +178,7 @@ tr:hover {background-color: #222;}
     /* background-colo@r: aqua; */
     height: 220px;
     max-width: 500px;
+    /* align-self: center; */
     margin: 40px auto;
     display: flex;
     flex-direction: row;
@@ -439,22 +443,6 @@ h3 {
     margin-top: 6px;
 }
 
-@media (max-width: 900px) {
-    .row {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .lvl, .lvl.expanded {
-        width: 100% !important;
-        height: auto;
-    }
-
-    .lvl {
-        padding: 12px;
-    }
-}
-
 
 
 
@@ -554,4 +542,91 @@ input::placeholder {
 
 .card strong{
     color: #ddd;
+}
+
+
+
+
+/* ==== REsponsiveness === */
+
+
+@media (max-width: 900px) {
+      /* body {
+        background-color: red !important;
+      } */
+
+
+
+    /* homepage responsive index  */
+    /* in the 750px one  */
+
+    /* login responsive */
+    .login-container{
+        flex-direction: column;
+    }
+    
+    /* leaderboard responsive */
+
+
+    /* rules responsive */
+
+
+    /* levels responsive */
+    .row {
+        flex-direction: column;
+        
+    }
+    
+
+    .lvl, .lvl.expanded {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .lvl {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 750px) {
+    /* home page ke liye */
+    nav{
+        flex-direction: column;
+        gap: 0;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    /* for the top transport to homepage wala part */
+    header{
+        flex-direction: column;
+    }
+
+    header a.back{
+        margin-left: 0px;
+    }
+
+    /* login page again */
+
+    .part1, .part2{
+        
+        width: 200px;
+        height: 150px;
+        padding: 50px 20px;
+        margin: 20px;
+        
+    }
+
+}
+
+@media (max-width: 360px) {
+    /* for the top transport to homepage wala part */
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header a.back{
+        margin-left: 0px;
+    }
 }
