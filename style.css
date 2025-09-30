@@ -575,6 +575,7 @@ input::placeholder {
     .row {
         flex-direction: column;
         height: auto;
+        
     }
     
 
