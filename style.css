@@ -574,7 +574,7 @@ input::placeholder {
     /* levels responsive */
     .row {
         flex-direction: column;
-        
+        height: auto;
     }
     
 
