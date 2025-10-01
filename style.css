@@ -4,10 +4,50 @@
     transition: 0.3s ease;
     /* font-family: "JetBrains Mono", monospace; */
     text-transform: lowercase;
+    scrollbar-width:8px;
+    scrollbar-color: #333 #0a0a0a;
+
+}
+/* scrollbar stuff */
+::selection {
+  background-color: #333;  
+  color: #58a6ff;         
 }
 
+
+::-moz-selection {
+  background-color: #333;
+  color: #58a6ff;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 6px;
+  border: 3px solid #0a0a0a; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+
+
+
+/* baaki sab kuch */
+
 body {
-    margin: 0;
+    margin: 0px;
     background-color: #0a0a0a;
     color: #e6e6e6;
     font-family: 'Doto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -68,11 +108,22 @@ header a.back {
 /* === HOMEPAGE index.html === */
 
 
+#home-container{
+    /* background-color: rebeccapurple; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
 
+}
+/* #home-container{
+    margin: 20vh 0px;
+} */
 #homename{
     /* background-color: aqua; */
     margin: 0 auto;
-    margin-top: 20vh;
+    /* margin-top: 20vh; */
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -137,7 +188,9 @@ nav{
     cursor: pointer;
 }
 
-
+span {
+    color: #fff;
+}
 
 
 /* ===leaderboard=== */
@@ -612,12 +665,13 @@ input::placeholder {
 
     .part1, .part2{
         
-        width: 200px;
-        height: 150px;
+        width: 300px;
+        height: 200px;
         padding: 50px 20px;
-        margin: 20px;
-        
+        margin: 10px;
+        margin-top: 0px
     }
+    
 
 }
 
@@ -630,4 +684,14 @@ input::placeholder {
     header a.back{
         margin-left: 0px;
     }
+    .part1, .part2{
+        
+        width: 250px;
+        height: 150px;
+        padding: 50px 20px;
+        margin: 10px;
+        margin-top: 0px
+    }
 }
+
+

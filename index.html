@@ -18,62 +18,63 @@
     <title>EntropyCTF</title>
 </head>
 <body>
-    <div id="homename">
-        <h1 id="entropyctf">entropyCTF</h1>
-        <div id="blinking-cursor">_</div>
-    </div>
-    <div id="paras">
-        <p>test your skills xyz xyz lorem ipsum.</p>
-    </div>
-    <nav>
-       <!-- <div id="logo">
+    <div id="home-container">
+        <div id="homename">
+            <h1 id="entropyctf">entropyCTF</h1>
+            <div id="blinking-cursor">_</div>
+        </div>
+        <div id="paras">
+            <p>test your skills xyz xyz lorem ipsum.</p>
+        </div>
+        <nav>
+        <!-- <div id="logo">
 
-       </div> -->
-       <!-- <div id="filler">
+        </div> -->
+        <!-- <div id="filler">
 
-       </div> -->
-    <!-- <div id="menu"> -->
-        <a href="/levels/levels.html">
-            <div class="opt" id="levels">
-                <h4>lvls</h4>
-            </div>
-        </a>
-        <a href="/logs/logs.html">
-            <div class="opt" id="logs">
-                <h4>logs</h4>
-            </div>
-        </a>
-        <a href="/leaderboard/leaderboard.html">
-            <div class="opt" id="leaderboard">
-                <h4>leaderboard</h4>
-            </div>
-        </a>
-        <a href="/rules/rules.html">
-            <div class="opt" id="rules">
-                <h4>rules</h4>
-            </div>
-        </a>
-        <a href="/login/login.html">
-            <div class="opt" id="login">
-                <h4>key/login</h4>
-            </div>
-        </a>
+        </div> -->
+        <!-- <div id="menu"> -->
+            <a href="/levels/levels.html">
+                <div class="opt" id="levels">
+                    <h4>lvls</h4>
+                </div>
+            </a>
+            <a href="/logs/logs.html">
+                <div class="opt" id="logs">
+                    <h4>logs</h4>
+                </div>
+            </a>
+            <a href="/leaderboard/leaderboard.html">
+                <div class="opt" id="leaderboard">
+                    <h4>leaderboard</h4>
+                </div>
+            </a>
+            <a href="/rules/rules.html">
+                <div class="opt" id="rules">
+                    <h4>rules</h4>
+                </div>
+            </a>
+            <a href="/login/login.html">
+                <div class="opt" id="login">
+                    <h4>key/login</h4>
+                </div>
+            </a>
 
-    <!-- </div> -->
-    </nav>
-    <div id="paras">
-        <p>
-            > time left : $finaltime - $currtime
-        </p>
-        <p>
-            > challenges online: $left/$total
-        </p>
-        
-        <p>
-            > server status: $online
-        </p>
+        <!-- </div> -->
+        </nav>
+        <div id="paras">
+            <p>
+                > time left : <span id="time">$finaltime - $currtime</span>
+            </p>
+            <p>
+                > challenges online: <span id="chall">$left/$total</span>
+            </p>
+            
+            <p>
+                > server status: <span id="serverstats">offline</span>
+            </p>
+        </div>
     </div>
-    
 
     <script src="script.js"></script>
 </body>
