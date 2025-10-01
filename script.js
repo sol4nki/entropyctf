@@ -161,7 +161,7 @@ setInterval(() => {
 
 
 
-// hash from ground up
+// sha256 hash from ground up
 
 function rightrotate(w1, num){
     return ((w1 >>> num) | (w1 << (32 - num))) >>> 0
@@ -312,8 +312,8 @@ function sha256(normal){
     }
 }
 
-console.log(sha256('hi'), "this")
+// console.log(sha256('hi'), "this")
 
-sha256('hi')
+// sha256('hi')
 
 // b*as wont fking work on js works on py fk nah did evetrything FFf
