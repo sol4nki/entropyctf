@@ -8,6 +8,7 @@
     <meta property="og:image" content="../images/webthumb.jpg">
     <meta property="og:type" content="website">
     
+    <meta property="image" content="../images/webthumb.jpg">
     <meta property="description" content="10 levels: ssh & file reads, bugfixes, hex/stego, jsserver quirks, commit hunts, node flags, plus hidden keys all around.">
     <link rel="stylesheet" href="style.css">
     <!-- fonts here -->
@@ -18,6 +19,38 @@
     <title>EntropyCTF</title>
 </head>
 <body>
+    <div id="chatbotcorner">
+        <img src="images/pixel-frame-0.png" alt="chatbot" id="chatboticon">
+        <div id="hidden-chatbot">
+            <div id="top-part">
+                <div id="chatbotname">name idk</div>
+                <div id="filler"></div>
+                <div id="chatbotclose">
+                    X
+                </div>
+            </div>
+            <div id="chat-part">
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                <p class="bot">1</p>
+                <p class="user">2</p>
+                
+
+            </div>
+            <div id="input-part">
+                <input type="text" id="chatinput" placeholder="type here...">
+                <input type="submit" value="send" id="chatsend">
+            </div>
+        </div>
+    </div>
     <div id="home-container">
         <div id="homename">
             <h1 id="entropyctf">entropyCTF</h1>
@@ -64,14 +97,14 @@
         </nav>
         <div id="paras">
             <p>
-                > time left : <span id="time">$finaltime - $currtime</span>
-            </p>
-            <p>
                 > challenges online: <span id="chall">$left/$total</span>
             </p>
             
             <p>
                 > server status: <span id="serverstats">offline</span>
+            </p>
+            <p>
+                > time left : <span id="time">$finaltime - $currtime</span>
             </p>
         </div>
     </div>

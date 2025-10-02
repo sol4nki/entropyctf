@@ -317,3 +317,47 @@ function sha256(normal){
 // sha256('hi')
 
 // b*as wont fking work on js works on py fk nah did evetrything FFf
+
+
+// chatbot stuff
+
+const chatboticon = document.querySelector('#chatboticon')
+const chatbotid = document.querySelector('#chatbotcorner')
+const toppart = document.querySelector('#top-part')
+
+
+chatboticon.addEventListener('click', (event) => {
+    
+    if (chatbotid.classList.contains("expanded")){
+        return
+    }
+
+    // check for the comment -> 5a7c4 in this file
+    if (!toppart.contains(chatboticon)) {
+        toppart.prepend(chatboticon)
+    }
+
+    console.log(`element with ID "${chatbotid}"`)
+    chatbotid.classList.add("expanded")
+
+})
+
+const chatbotcloseid = document.querySelector('#chatbotclose')
+
+
+chatbotcloseid.addEventListener('click', (event) => {
+    
+    if (chatbotid.classList.contains("expanded")){
+        chatbotid.classList.remove("expanded")
+        console.log(`element with ID "${chatbotid}"`)
+    }
+
+    // this part below is just to reappend the chatbot id to chatbotcorner
+    // because i am dumb and couldnt make another expanded id for top-part 
+    // i ended up with this [comment - 5a7c4]
+
+    if (toppart.contains(chatboticon)) {
+        chatbotid.prepend(chatboticon)
+        console.log(`element with ID fk u}"`)
+    }
+})
