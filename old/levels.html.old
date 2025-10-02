@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <!-- fonts here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>EntropyCTF</title>
+</head>
+<body>
+    <header>Levels</header>
+    <a href="../main.html">transport</a>
+    
+    <div id="container">
+
+        <h3>Introductory</h3>
+        <div id="hori">
+            <div class="lvl" id="1">
+                lvl1
+            </div>
+            <div class="lvl" id="2">
+                lvl2
+            </div>
+            <div class="lvl" id="3">
+                lvl3
+            </div>
+            <div class="lvl" id="4">
+                lvl4
+            </div>
+            <div class="lvl" id="5">
+                lvl5
+            </div>
+        </div>
+        
+        <h3>Advanced</h3>
+        <div id="hori2">
+            
+            <div class="lvl" id="6">
+                lvl6
+            </div>
+            <div class="lvl" id="7">
+                lvl7
+            </div>
+            <div class="lvl" id="8">
+                lvl8
+            </div>
+            <div class="lvl" id="9">
+                lvl9
+            </div>
+            <div class="lvl" id="10">
+                lvl10
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

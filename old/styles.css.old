@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* cdn of the other font too its currently in html only */
+
+*{
+    transition: 0.3s ease;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+
+body {
+    background-color: #0d1117;
+    /* padding: 0;
+    margin: 0; */
+    color: #e6edf3;
+}
+
+header{
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: normal;
+    /* font-variation-settings:
+    "ROND" 0; */
+
+}
+
+
+
+/* === loading === */
+
+#specialcase{
+    display: inline;
+    padding: 0px 0px;
+}
+#blinker {
+    display: inline-flex;
+    background-color: #f8f9fa;
+    align-items: center;
+    align-self: center;
+    height: 17px;
+    width: 7px;
+    margin: -2px -5px;
+    padding: 0px 0px;
+    animation: blink-animation 1s steps(1, start) infinite;
+    -webkit-animation: blink-animation 1s steps(1, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+#loading-front{
+    background-color: #58a6ff;
+    height: 4px;
+    border-radius: 50px;
+    width: 0%;
+    animation: loading-anim 4s infinite;
+    -webkit-animation: loading-anim 3s infinite;
+
+}
+
+
+@keyframes loading-anim {
+  0% { width: 0%; }
+  40% { width: 30%; }
+  70% { width: 100%; }
+  90% {width: 0%;}
+}
+
+@-webkit-keyframes loading-anim {
+  0% { width: 0%; }
+  50% { width: 30%; }
+  100% { width: 100%; }
+}
+
+
+#loading-back{
+    margin: 20px 20px;
+    background-color: #30363d;
+    height: 4px;
+    border-radius: 50px;
+    
+}
+
+nav{
+    height: 70px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+#filler{
+    flex: 1;
+}
+
+#logo{
+    background-color: #8957e5;
+    height: 50px;
+    width: 50px
+}
+
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    /* background-color: rebeccapurple; */
+}
+
+.opt:hover{
+    cursor: pointer;
+    opacity: 75%;
+}
+
+
+
+h3{
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 21px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    margin: 20px 30px;
+}
+#hori{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    
+}
+
+#hori2{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    
+}
+
+a { all: unset; }
+
+
+.lvl{
+    /* background-color: red; */
+    width: 20%;
+    border: 2px solid #30363d; 
+}
+
+.lvl + .lvl{
+    border-left: 0;
+}
+
+.lvl:hover{
+    width: 70%;
+    background-color: #21262d;
+}
+
+
+
+
+
+
+/*==== logs ====*/
+
+.card{
+    background-color: #161b22;
+    height: 200px;
+    width: 50vw;
+    margin: 15px auto;
+    border: 3px solid #30363d;
+    border-radius: 10px;
+    padding: 4px 10px;
+
+}
+
+/* 
+#card-n{
+    border-color: blue;
+}    */
+
+/* decide if i wanna use red green and variable vcolors
+    or keep a sleek aesthetic only */
+
+/* will finilazie when i properluy design the cards, logo finish up with colors
+    and other implementations properl;uy done in code*/
+
+/*  CARD DESIGN LEFT completing after midsem fosho*/
+
+
+
+#card-g{
+    border-color: #2ea043;
+}
+
+#card-r{
+    border-color: #f85149;
+}
+
+
+/* ===leaderboard=== */
+
+table{
+    text-transform: lowercase;
+}
+
+table, th, td {
+    border: 1px solid #30363d;
+    border-collapse: collapse;
+    padding: 5px 20px;
+    
+}
+
+th{
+    background-color: #238636;
+}
+
+#you-tb{
+    background-color: #21262d;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+    /* margin: 10px 50px; */
+}
+
+td{
+    text-align: center;
+}
+
+tr:hover {background-color: #ff7b72;}
+
+
+/* === PODIUM ==== */
+
+#podium{
+    /* background-color: aqua; */
+    height: 30vw;
+    width: 60vw;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: inherit;
+    align-items:flex-end;
+    text-align: center;
+}
+
+/* .half{
+
+}
+
+.onefourth{
+
+} */
+
+
+#fir{
+    /* background-color: red; */
+    flex: 1;
+    height: 15vw;
+    text-align: center;
+    border: 2px solid #c0c0c0;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+#sec{
+    /* background-color: blueviolet; */
+    flex: 1;
+    height: 23vw;
+    text-align: center;
+    border: 2px solid #ffd700;
+    border-bottom: 0px;
+}
+
+#thir{
+    /* background-color: bisque; */
+    flex: 1;
+    height: 10vw;
+    text-align: center;
+    justify-content: center;   
+    border: 2px solid #cd7f32;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.pos-name{
+    justify-self: auto;
+    text-align: center;
+}
+.team-name{
+    position:relative;
+    top: -50px;
+    /* left: 30px; */
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+/* ===LOGIN PART ==== */
+
+.main-container{
+    /* background-color: aqua; */
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.part1{
+    /* background-color: red; */
+    /* height: 100%; */
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.part2{
+    /* background-color: rebeccapurple; */
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+input{
+    background-color: #0d1117;
+    color: #2ea043;
+    border: 1px solid #30363d;
+    padding: 4px 9px;
+    margin: 4px 8px;
+}
+
+input:active{
+    border: 1px solid #58a6ff;
+}
+
+/* 
+primary:   #6366f1
+secondary: #14b8a6
+accent:    #f59e0b
+background: #f8fafc
+surface:    #ffffff
+text primary:   #1e293b
+text secondary: #64748b
+error:   #ef4444
+success: #22c55e
+*/
