@@ -236,6 +236,14 @@ td{
 
 tr:hover {background-color: #222;}
 
+* span img{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
 
 /* === PODIUM ==== */
 
@@ -747,7 +755,14 @@ input::placeholder {
     align-items: flex-start;
     justify-content: left;
     padding: 15px;
-    overflow-y: visible;
+    overflow-y: scroll;
+    cursor: default;
+    /* background-color: rebeccapurple; */
+    
+}
+
+#chatbotclose{
+    cursor: pointer;
 }
 
 
@@ -794,6 +809,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    overflow-y: scroll;
 }
 
 #chat-part p.bot{

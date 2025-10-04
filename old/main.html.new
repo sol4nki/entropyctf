@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="EntropyCTF">
     <meta property="og:description" content="10 levels: ssh & file reads, bugfixes, hex/stego, jsserver quirks, commit hunts, node flags, plus hidden keys all around.">    
-    <meta property="og:image" content="../images/webthumb.jpg">
+    <meta property="og:image" content="../images/webthumb0.png">
     <meta property="og:type" content="website">
     
     <meta property="description" content="10 levels: ssh & file reads, bugfixes, hex/stego, jsserver quirks, commit hunts, node flags, plus hidden keys all around.">
