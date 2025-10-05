@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tiny-LLM Chat</title>
+</head>
+<body style="font-family:sans-serif;">
+  <h2>Tiny-LLM Chat</h2>
+  <div id="chatbox" style="border:1px solid #ccc; padding:10px; height:300px; overflow:auto;"></div>
+  <form id="chat-form">
+    <input id="msg" placeholder="Type a message..." style="width:80%;" />
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("chat-form");
+    const msgInput = document.getElementById("msg");
+    const chatbox = document.getElementById("chatbox");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = msgInput.value;
+      chatbox.innerHTML += `<div><b>You:</b> ${text}</div>`;
+      msgInput.value = "";
+      const res = await fetch("http://127.0.0.1:8000/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ text }),
+      });
+      const data = await res.json();
+      chatbox.innerHTML += `<div><b>Bot:</b> ${data.response}</div>`;
+      chatbox.scrollTop = chatbox.scrollHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+[
+  {
+    "level": 1,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 2,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 3,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 4,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 5,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 6,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 7,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 8,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 9,
+    "flag": "flag{test}"
+  },
+  {
+    "level": 10,
+    "flag": "flag{test}"
+  }
+]
+

@@ -810,6 +810,7 @@ input::placeholder {
     flex-direction: column;
     gap: 8px;
     overflow-y: scroll;
+    flex: 1;
 }
 
 #chat-part p.bot{
@@ -837,6 +838,7 @@ input::placeholder {
 
 #hidden-chatbot{
     /* display: none; */
+    display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
@@ -852,15 +854,17 @@ input::placeholder {
     gap: 6px;
     width: 100%;
     /* background-color: aqua; */
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
+    /* justify-content: flex-end; */
+    
     
 }
 
 #chatinput{
     flex: 1;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 #input-part input{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 70px;
 }

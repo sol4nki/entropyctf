@@ -1,0 +1,1 @@
+all of this is just dummy data, and dummy db for ease of testing on different devices, anyone can clone and run it directly with the required dependencies installed (sqlite + node + python ) modules and everything is listed in the main README.md or requirements.txt

@@ -1,0 +1,72 @@
+[
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 150,
+    "team_name": "NovaRiders",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 80,
+    "team_name": "QuantumCrew",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 120,
+    "team_name": "CipherCats",
+    "stolen_from": true
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 60,
+    "team_name": "ByteBenders",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 200,
+    "team_name": "AuroraCore",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 30,
+    "team_name": "PacketPioneers",
+    "stolen_from": true
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 95,
+    "team_name": "StormForge",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 45,
+    "team_name": "OverflowGuild",
+    "stolen_from": true
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 170,
+    "team_name": "BlueVectors",
+    "stolen_from": false
+  },
+  {
+    "email": "testing@college.edu",
+    "password": "testkey0",
+    "points": 10,
+    "team_name": "NullSquad",
+    "stolen_from": true
+  }
+]

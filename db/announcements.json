@@ -1,0 +1,37 @@
+[
+  {
+    "type": "general",
+    "title": "notice",
+    "msg": "competition about to end",
+    "details": [
+      "questions available for solving: 4/10",
+      "time left: 15mins"
+    ]
+  },
+  {
+    "type": "hint",
+    "title": "hint — lvl 5",
+    "level": 5,
+    "details": [
+      "admin announcement -",
+      "try searching for image metadata somewhere might help converting it to some other base"
+    ]
+  },
+  {
+    "type": "solved",
+    "level": 3,
+    "team": "team-ta",
+    "details": [
+      "now this level will no longer validate any flag inputs, better try other levels"
+    ]
+  },
+  {
+    "type": "stolen",
+    "points_stolen": 0.93,
+    "by_team": "caz-team",
+    "from_team": "team-xyz",
+    "details": [
+      "'s encrypted key will no longer be in play for the rest of the competition"
+    ]
+  }
+]
