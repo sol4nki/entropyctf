@@ -23,6 +23,9 @@
 //     }
 // }
 
+const backendurl = "http://127.0.0.1:8000"
+const totallevels = 10
+
 
 const lvlclass = document.querySelectorAll('.lvl')
 
@@ -324,7 +327,7 @@ setInterval(() => {
 
 // chatbot stuff + index.html 
 
-if (document.URL.includes("index.html")) {
+if (document.URL.includes("html")) {
 
     const chatboticon = document.querySelector('#chatboticon')
     const chatbotid = document.querySelector('#chatbotcorner')
@@ -366,9 +369,10 @@ if (document.URL.includes("index.html")) {
             // console.log(`element with xyz}"`)
         }
     })
+
     const chatbotsend = document.querySelector('#chatsend')
 
-    chatbotsend.addEventListener('click', () => {
+    chatbotsend.addEventListener('click', async () => {
         const userInput = document.querySelector('#chatinput').value
         if (userInput) {
             const userMessage = document.createElement('p')
@@ -376,7 +380,22 @@ if (document.URL.includes("index.html")) {
             userMessage.textContent = userInput
             document.querySelector('#chat-part').appendChild(userMessage)
             document.querySelector('#chatinput').value = ''
+            const res = await fetch(`${backendurl}/chat`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ text: userInput}),
+            });
+            const data = await res.json()
+            // chatbox.innerHTML += `<div><b>Bot:</b> ${data.response}</div>`;
+            const botMessage = document.createElement('p')
+            botMessage.classList.add('bot')
+            botMessage.textContent = data.response
+            document.querySelector('#chat-part').appendChild(botMessage)
+            document.querySelector('#chatinput').value = ''
+            document.querySelector('#chat-part').scrollTop = document.querySelector('#chat-part').scrollHeight;
         }
+        
+        
     })
 }
 
@@ -384,8 +403,33 @@ if (document.URL.includes("index.html")) {
 
 
 // levels page stuff + levels.html + flag checking
-
 if (document.URL.includes("levels.html")){
+    window.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const res = await fetch(`${backendurl}/levelstatus`)
+        const statusData = await res.json()
+
+        Object.entries(statusData).forEach(([levelId, ingame]) => {
+            const lvlElement = document.getElementById(levelId)
+            if (!lvlElement) return
+
+            const badge = lvlElement.querySelector(".badge")
+            if (!badge) return
+
+            if (ingame === 1) {
+                badge.classList.remove("locked")
+                badge.classList.add("unlocked")
+                badge.textContent = "unlocked"
+            } else {
+                badge.classList.remove("unlocked")
+                badge.classList.add("locked")
+                badge.textContent = "locked"
+            }
+        });
+    } catch (error) {
+        console.error("error:", error);
+        }
+    });
 
     const flagcheck = document.querySelectorAll('.check-btn')
     // console.log('here', flagcheck)
@@ -394,10 +438,44 @@ if (document.URL.includes("levels.html")){
             const flaginput = element.closest('.flag-row').querySelector('.flag-input')
         
             const lvlid = element.closest('.lvl').id
-
+            
+            if (!document.cookie){
+                alert("You need to login first!")
+                return
+            }
+            try{
+            cookiesessionid = document.cookie.split('=')[1]
+            if (flaginput.value){
+                const res = await fetch(`${backendurl}/levels`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    level: lvlid,
+                    flag: flaginput.value,
+                    team: cookiesessionid
+                    }),
+                })
+                const response = await res.json()
+                // console.log(sessionid)
+                if (response.response === -1) {
+                    alert("Invalid flag, Try again!")
+                } else if(response.response === 404){
+                    alert("This flag is already out of game.")
+                } else{
+                    // document.cookie = `sessionid=${sessionid.response}; path=/; domain=entropy.run.place`;
+                    alert(`Flag verified! ${response.team} got ${response.points} points`)
+            
+            
+            }
             console.log(`flag is ${flaginput.value} for lvl ${lvlid}`)
+        }}
+        catch (error){
+            console.error('Error:', error);
+            alert("Some error occured, try again later" + error)
+            return
+        }
         })
-
+        
         //implement if flag correct then green border if wrong red border
     })
 
@@ -410,7 +488,7 @@ if (document.URL.includes("levels.html")){
 
 
 
-// logs stuff + logs.html + announcements
+// logs stuff + logs.html + announcements 
 if (document.URL.includes("logs.html")) {
     const body = document.querySelector('body')
     fetch('../db/announcements.json')
@@ -456,8 +534,39 @@ if (document.URL.includes("logs.html")) {
     
 }
 
-// leaderboards + leaderboard.html + update everytime
+// leaderboards + leaderboard.html + update everytime [STILL NEED TO DO LOGIN ENC TOP DISP OF PERSONAL DATA ]
 if (document.URL.includes("leaderboard.html")) {
+    async function get_leaderboard() {
+        cookiesessionid = document.cookie.split('=')[1]
+        const res = await fetch(`${backendurl}/leaderboard`, {method: "GET"});
+        const data = await res.json();
+        console.log(JSON.stringify(data))
+        let place = 1
+        for(const element of data){
+            const tabledata = `<tr>
+            <td>[${place}]</td>
+            <td>${element.team}</td>
+            <td>${element.points.toFixed(1)}<span><img src="../images/flag-newo.png" alt="flag"></span></td>
+            <td>${element.solved}/${totallevels}</td>
+            </tr>
+            `
+            // implement that session id to display your data but later when i fix cookies + login enc
+            document.querySelector('table').insertAdjacentHTML('beforeend', tabledata)
+            if (place == 1){
+                document.querySelector('#sec .team-name').textContent = element.team
+            } else if (place == 2){
+                document.querySelector('#fir .team-name').textContent = element.team
+            } else if (place == 3){
+                document.querySelector('#thir .team-name').textContent = element.team
+            }
+            place++
+            
+        }
+
+
+    }
+
+    get_leaderboard()
     
 }
 
@@ -474,9 +583,23 @@ if (document.URL.includes("login.html")) {
     loginbtn.addEventListener('click', async () => {
         const keyinput = document.querySelector('#passkey-input').value
         if (keyinput) {
-            const hashedkey = await hashString(keyinput)
-            console.log(`hashed key is ${hashedkey}, real is ${keyinput}`)
+            // i dont really need hashing right now cause i have https? itll just encrypt it when fetching/sending it?
             
+            const res = await fetch(`${backendurl}/login`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ text: keyinput}),
+            })
+            const sessionid = await res.json()
+            // console.log(sessionid)
+            if (sessionid.response === -1) {
+                alert("Invalid passkey, Try again!");
+            } else{
+                // document.cookie = `sessionid=${sessionid.response}; path=/; domain=entropy.run.place`;
+                document.cookie = `sessionid=${sessionid.response}; path=/`;
+                alert(`Logged in successfully as: ${sessionid.team}`);
+            }
+            // one reason to keep this as some enc key is cause if i kept it as normal username anyone can access anyone's sessionid and post answers and everything else 
         }
     })
 
@@ -484,10 +607,30 @@ if (document.URL.includes("login.html")) {
 
     validatebtn.addEventListener('click', async () => {
         const keyinput = document.querySelector('#enckey').value
+        if (!document.cookie){
+            alert("You need to login first!")
+            return
+        }
+        cookiesessionid = document.cookie.split('=')[1]
         if (keyinput) {
-            const hashedkey = await hashString(keyinput)
-            console.log(`hashed key is ${hashedkey}, real is ${keyinput}`)
-            
+            const res = await fetch(`${backendurl}/key`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    enckey: keyinput,
+                    sesid: cookiesessionid
+                }),
+            })
+            const sessionid = await res.json()
+            // console.log(sessionid)
+            if (sessionid.response === -1) {
+                alert("Invalid key, Try again!");
+            } else if(sessionid.response === 404){
+                alert("This key is already out of game.")
+            } else{
+                // document.cookie = `sessionid=${sessionid.response}; path=/; domain=entropy.run.place`;
+                alert(`Key verified! You stole ${sessionid.points} points from ${sessionid.team}`)
+            }
         }
     })
 
@@ -497,6 +640,7 @@ if (document.URL.includes("login.html")) {
 
 
 // need to implement sending to server too. ^^^^^
+// DONE DPONE DONE
 
 
 

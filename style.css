@@ -211,7 +211,7 @@ table{
     width: 80vw;
     margin: auto;
     border-radius: 4px;
-    /* margin: 10px 50px; */
+    margin-bottom: 50px;
 }
 
 table, th, td {

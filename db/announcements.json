@@ -33,5 +33,14 @@
     "details": [
       "'s encrypted key will no longer be in play for the rest of the competition"
     ]
+  },
+  {
+    "type": "general",
+    "title": "notice",
+    "msg": "competition starts now",
+    "details": [
+      "questions available for solving: 10/10",
+      "time left: 2hrs"
+    ]
   }
 ]
