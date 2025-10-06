@@ -104,17 +104,18 @@ function timeleft(){
     }
 }
 
-function challleft(){
-    const challleft = "check server call int"
-    
+async function challleft(){
+    try{
+    const response = await fetch(`${backendurl}/challenges`)
+    const data = await response.json()
+
     // console.log(new Date())
     
-    if (0 <= challleft <= 10){
-        const difference = 10 - challleft
+    if (data.challenges){
 
         const challid = document.getElementById('chall')
         if (challid) {
-            challid.textContent = `${difference}`
+            challid.textContent = `${data.challenges}/10`
         }
 
         
@@ -124,13 +125,17 @@ function challleft(){
             challid.textContent = `error`
         }
     }
+    }catch (error){
+        console.error('Error:', error);
+    }
 }
 
-function serverstatus(){
-    const ping = "check for ping on server callvback"
-    
-    
-    if (ping){
+async function serverstatus(){
+    try{
+    const ping = await fetch(`${backendurl}/ping`)
+    const pingData = await ping.json()
+
+    if (pingData.response === "pong"){
 
         const serverid = document.getElementById('serverstats')
         if (serverid) {
@@ -144,12 +149,18 @@ function serverstatus(){
             serverid.textContent = `$offline`
         }
     }
+    }catch (error){
+        console.error('Error:', error);
+    }
 }
 
-
+try{
 timeleft()
 challleft()
 serverstatus() //only need to update once when website loads
+} catch (error){
+    console.error('Error:', error);
+}
 
 setInterval(() => {
     
@@ -380,6 +391,7 @@ if (document.URL.includes("html")) {
             userMessage.textContent = userInput
             document.querySelector('#chat-part').appendChild(userMessage)
             document.querySelector('#chatinput').value = ''
+            try{
             const res = await fetch(`${backendurl}/chat`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -392,7 +404,10 @@ if (document.URL.includes("html")) {
             botMessage.textContent = data.response
             document.querySelector('#chat-part').appendChild(botMessage)
             document.querySelector('#chatinput').value = ''
-            document.querySelector('#chat-part').scrollTop = document.querySelector('#chat-part').scrollHeight;
+            document.querySelector('#chat-part').scrollTop = document.querySelector('#chat-part').scrollHeight
+            }catch (error){
+                console.error('Error:', error);
+            }
         }
         
         
@@ -467,7 +482,7 @@ if (document.URL.includes("levels.html")){
             
             
             }
-            console.log(`flag is ${flaginput.value} for lvl ${lvlid}`)
+            // console.log(`flag is ${flaginput.value} for lvl ${lvlid}`)
         }}
         catch (error){
             console.error('Error:', error);
@@ -536,7 +551,9 @@ if (document.URL.includes("logs.html")) {
 
 // leaderboards + leaderboard.html + update everytime [STILL NEED TO DO LOGIN ENC TOP DISP OF PERSONAL DATA ]
 if (document.URL.includes("leaderboard.html")) {
+    try{
     async function get_leaderboard() {
+
         cookiesessionid = document.cookie.split('=')[1]
         const res = await fetch(`${backendurl}/leaderboard`, {method: "GET"});
         const data = await res.json();
@@ -565,8 +582,12 @@ if (document.URL.includes("leaderboard.html")) {
 
 
     }
-
     get_leaderboard()
+
+    }catch (error){
+        console.error('Error:', error);
+    }
+
     
 }
 
@@ -584,7 +605,7 @@ if (document.URL.includes("login.html")) {
         const keyinput = document.querySelector('#passkey-input').value
         if (keyinput) {
             // i dont really need hashing right now cause i have https? itll just encrypt it when fetching/sending it?
-            
+            try{
             const res = await fetch(`${backendurl}/login`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -599,7 +620,10 @@ if (document.URL.includes("login.html")) {
                 document.cookie = `sessionid=${sessionid.response}; path=/`;
                 alert(`Logged in successfully as: ${sessionid.team}`);
             }
-            // one reason to keep this as some enc key is cause if i kept it as normal username anyone can access anyone's sessionid and post answers and everything else 
+        }catch (error){
+            console.error('Error:', error);
+        }   
+        // one reason to keep this as some enc key is cause if i kept it as normal username anyone can access anyone's sessionid and post answers and everything else 
         }
     })
 
@@ -611,6 +635,7 @@ if (document.URL.includes("login.html")) {
             alert("You need to login first!")
             return
         }
+        try{
         cookiesessionid = document.cookie.split('=')[1]
         if (keyinput) {
             const res = await fetch(`${backendurl}/key`, {
@@ -631,7 +656,9 @@ if (document.URL.includes("login.html")) {
                 // document.cookie = `sessionid=${sessionid.response}; path=/; domain=entropy.run.place`;
                 alert(`Key verified! You stole ${sessionid.points} points from ${sessionid.team}`)
             }
-        }
+        }}catch (error){
+        console.error('Error:', error);
+    }
     })
 
 }
@@ -647,11 +674,16 @@ if (document.URL.includes("login.html")) {
 // staxck overflow cause my sha256 implementation not giving correct hash
 
 async function hashString(message) {
+    try{
     const msgBuffer = new TextEncoder().encode(message);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
     return hashHex;
+    
+    }catch (error){
+        console.error('Error:', error);
+    }
 }
 
 // hashString('hello').then(hash => {

@@ -250,13 +250,24 @@ def get_levelstatus():
     result = {}
     for level, ingame in data:
         result[f"lvl{level}"] = ingame 
-    print(result)
+    # print(result)
     return result
-
+print(get_levelstatus())
+@app.get("/ping")
+def ping():
+    return {"response": "pong"}
 # print(leaderboard())
 
+@app.get("/challenges")
+def challenges():
+    conn = sqlite3.connect("./db/entropyctf.db")
+    cur = conn.cursor()
+    cur.execute("SELECT COUNT(*) FROM flags WHERE ingame = 1")
+    ingames = cur.fetchone()[0]
+    conn.close()
+    return {"challenges": ingames}
 
-
+# challenges()
 
 
 # print(check_flag(1, 'flag_2'))
