@@ -91,7 +91,7 @@ def check_flag(level, flag):
     cur = conn.cursor()
     cur.execute("SELECT points, ingame FROM flags WHERE level = ? AND flag = ?", (level, flag))
     result = cur.fetchone()
-    print(level, flag, result)
+    # print(level, flag, result)
     conn.close()
     return result if result else (False, "no")
 # print(check_flag(1, 'flag_1'))
@@ -211,7 +211,7 @@ def key(keyreq: KeyRequest):
             return {"response": 404}
         
         points = round(random.uniform(0,get_score(res[0][0])),1)
-        print("here", points)
+        # print("here", points)
         change_score(res[0][0], get_score(res[0][0]) - points)
         change_score(win, get_score(win) + points)
         set_stolenfrom(res[0][0])
@@ -226,9 +226,9 @@ def flagcheck(flagjson: FlagRequest):
     flag = flagjson.flag
     team = check_sesid(flagjson.team)
     points, ingame = check_flag(lvl, flag)
-    print(check_flag(lvl, flag))
-    print("here")
-    print(points)
+    # print(check_flag(lvl, flag))
+    # print("here")
+    # print(points)
     if ingame == "no":
         return {"response": -1}
     elif ingame == 1:
@@ -252,7 +252,7 @@ def get_levelstatus():
         result[f"lvl{level}"] = ingame 
     # print(result)
     return result
-print(get_levelstatus())
+# print(get_levelstatus())
 @app.get("/ping")
 def ping():
     return {"response": "pong"}

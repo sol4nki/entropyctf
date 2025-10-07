@@ -458,6 +458,7 @@ if (document.URL.includes("levels.html")){
                 alert("You need to login first!")
                 return
             }
+            
             try{
             cookiesessionid = document.cookie.split('=')[1]
             if (flaginput.value){
@@ -479,7 +480,6 @@ if (document.URL.includes("levels.html")){
                 } else{
                     // document.cookie = `sessionid=${sessionid.response}; path=/; domain=entropy.run.place`;
                     alert(`Flag verified! ${response.team} got ${response.points} points`)
-            
             
             }
             // console.log(`flag is ${flaginput.value} for lvl ${lvlid}`)
@@ -535,7 +535,7 @@ if (document.URL.includes("logs.html")) {
                 }
                 else if (log.type === "stolen"){
                     logEntry.innerHTML = `
-                    <p><strong>${log.points_stolen}<span><img src="../images/flag-newo.png" alt="flag"></span>stolen</strong> </p>
+                    <p><strong>${log.points_stolen}<span><img src="../images/flag-dark.png" alt="flag"></span>stolen</strong> </p>
                     <p> by: <span style="color:#ffffff;">${log.by_team}</span> &nbsp; · &nbsp; from: <span style="color:#ffffff;">${log.from_team}</span></p>
                     <p>${log.from_team}${log.details.join('</p><p>')}</p>
                 `
@@ -563,7 +563,7 @@ if (document.URL.includes("leaderboard.html")) {
             const tabledata = `<tr>
             <td>[${place}]</td>
             <td>${element.team}</td>
-            <td>${element.points.toFixed(1)}<span><img src="../images/flag-newo.png" alt="flag"></span></td>
+            <td>${element.points.toFixed(1)}<span><img src="../images/flag-dark.png" alt="flag"></span></td>
             <td>${element.solved}/${totallevels}</td>
             </tr>
             `
@@ -680,7 +680,7 @@ async function hashString(message) {
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
     return hashHex;
-    
+
     }catch (error){
         console.error('Error:', error);
     }

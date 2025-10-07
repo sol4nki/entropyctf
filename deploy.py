@@ -324,8 +324,8 @@ if __name__ == '__main__':
     #         string8star4+=enc[o]
     #     w.append(string8star4)
     # print(w, len(w))
-    etc = '8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4'
-    assert etc == sha256('hi')
+    etc = '35072c1ae546350e0bfa7ab11d49dc6f129e72ccd57ec7eb671225bbd197c8f1'
+    assert etc == sha256('hello_world')
     print(sha256('hi'))
     print(f'{etc} this is actual hash of hi')
     # print(rightrotate('01101000011001010110110001101100', 1))
